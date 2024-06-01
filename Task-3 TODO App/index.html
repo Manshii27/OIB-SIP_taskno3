@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cupcake night">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.18.0/dist/full.css" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+    <link rel="icon" href="res/favicon.ico">
+    <title>TO-DOIT</title>
+</head>
+<body>
+    <div class="container mx-auto p-4 w-full sm:w-full md:w-3/4 lg:w-1/3">
+        <header class="mb-4">
+            <h1 class="text-3xl font-bold">Todo List</h1>
+            <div class="alert-message mt-2 text-red-600"></div>
+            <div class="input-section flex space-x-2 mt-4">
+                <input type="text" placeholder="Add a new task..." class="input input-bordered input-primary w-full max-w-xs">
+                <input type="date" class="input input-bordered input-primary w-full max-w-xs schedule-date">
+                <button class="btn btn-primary add-task-button">
+                    <i class="bx bx-plus bx-sm"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="todos-filter flex space-x-2 mb-4">
+            <div class="dropdown">
+                <label tabindex="0" class="btn btn-secondary m-1">Filter</label>
+                <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                    <li onclick="filterTodos('all')"><a>All</a></li>
+                    <li onclick="filterTodos('pending')"><a>Pending</a></li>
+                    <li onclick="filterTodos('completed')"><a>Completed</a></li>
+                </ul>
+            </div>
+            <button class="btn btn-primary delete-all-btn">
+                Delete All
+            </button>
+        </div>
+
+        <table class="table w-full mb-4">
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody class="todos-list-body"></tbody>
+        </table>
+
+        <div id="calendar" class="mb-4"></div>
+
+        <footer>
+            <div class="author-text">
+                <p>Created by <a href="https://github.com/Manshii27" target="_blank"><b>Manshi Dwivedi</b></a></p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Theme switcher div outside the container -->
+    <div class="theme-switcher fixed top-4 right-4"> <!-- Add 'fixed', 'top-4', 'right-4' classes -->
+        <div class="dropdown dropdown-left">
+            <label tabindex="0" class="btn btn-primary m-1">
+                <i class='bx bxs-palette bx-sm'></i>
+            </label>
+            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                <li class="theme-item" theme="cupcake"><a>cupcake</a></li>
+                <li class="theme-item" theme="dark"><a>dark</a></li>
+                <li class="theme-item" theme="light"><a>light</a></li>
+                <li class="theme-item" theme="bumblebee"><a>bumblebee</a></li>
+                <li class="theme-item" theme="synthwave"><a>synthwave</a></li>
+                <li class="theme-item" theme="halloween"><a>halloween</a></li>
+                <li class="theme-item" theme="fantasy"><a>fantasy</a></li>
+                <li class="theme-item" theme="retro"><a>retro</a></li>
+                <li class="theme-item" theme="valentine"><a>valentine</a></li>
+                <li class="theme-item" theme="lofi"><a>lofi</a></li>
+                <li class="theme-item" theme="pastel"><a>pastel</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
